@@ -59,17 +59,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BudgetFinancialsDBDataSet.Designer.cs">
+    <Compile Include="DataSets\BudgetFinancialsDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BudgetFinancialsDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BudgetFinancialsDBDataSetDebt.Designer.cs">
+    <Compile Include="DataSets\BudgetFinancialsDBDataSetDebt.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BudgetFinancialsDBDataSetDebt.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BudgetFinancialsDBDataSetSavingsName.Designer.cs">
+    <Compile Include="DataSets\BudgetFinancialsDBDataSetSavingsName.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BudgetFinancialsDBDataSetSavingsName.xsd</DependentUpon>
@@ -90,46 +90,46 @@
       <DependentUpon>BudgetFinancialsVTDIModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DbContextProvider.cs.cs" />
-    <Compile Include="ProfileSettings.cs">
+    <Compile Include="WindowsForms\ProfileSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfileSettings.Designer.cs">
+    <Compile Include="WindowsForms\ProfileSettings.Designer.cs">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>BudgetFinancialsVTDIModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserDebt.cs">
+    <Compile Include="WindowsForms\UserDebt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserDebt.Designer.cs">
+    <Compile Include="WindowsForms\UserDebt.Designer.cs">
       <DependentUpon>UserDebt.cs</DependentUpon>
     </Compile>
     <Compile Include="UserDebtTb.cs">
       <DependentUpon>BudgetFinancialsVTDIModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserSavings.cs">
+    <Compile Include="WindowsForms\UserSavings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserSavings.Designer.cs">
+    <Compile Include="WindowsForms\UserSavings.Designer.cs">
       <DependentUpon>UserSavings.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.cs">
+    <Compile Include="WindowsForms\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPage.Designer.cs">
+    <Compile Include="WindowsForms\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignUp.cs">
+    <Compile Include="WindowsForms\SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUp.Designer.cs">
+    <Compile Include="WindowsForms\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.cs">
+    <Compile Include="WindowsForms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="WindowsForms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -140,22 +140,22 @@
     <Compile Include="UsersTb.cs">
       <DependentUpon>BudgetFinancialsVTDIModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ProfileSettings.resx">
+    <EmbeddedResource Include="WindowsForms\ProfileSettings.resx">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserDebt.resx">
+    <EmbeddedResource Include="WindowsForms\UserDebt.resx">
       <DependentUpon>UserDebt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserSavings.resx">
+    <EmbeddedResource Include="WindowsForms\UserSavings.resx">
       <DependentUpon>UserSavings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPage.resx">
+    <EmbeddedResource Include="WindowsForms\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="WindowsForms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUp.resx">
+    <EmbeddedResource Include="WindowsForms\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -171,37 +171,37 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BudgetFinancialsVTDIModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BudgetFinancialsDBDataSet.xsc">
+    <None Include="DataSets\BudgetFinancialsDBDataSet.xsc">
       <DependentUpon>BudgetFinancialsDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BudgetFinancialsDBDataSet.xsd">
+    <None Include="DataSets\BudgetFinancialsDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BudgetFinancialsDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BudgetFinancialsDBDataSet.xss">
+    <None Include="DataSets\BudgetFinancialsDBDataSet.xss">
       <DependentUpon>BudgetFinancialsDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BudgetFinancialsDBDataSetDebt.xsc">
+    <None Include="DataSets\BudgetFinancialsDBDataSetDebt.xsc">
       <DependentUpon>BudgetFinancialsDBDataSetDebt.xsd</DependentUpon>
     </None>
-    <None Include="BudgetFinancialsDBDataSetDebt.xsd">
+    <None Include="DataSets\BudgetFinancialsDBDataSetDebt.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BudgetFinancialsDBDataSetDebt.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BudgetFinancialsDBDataSetDebt.xss">
+    <None Include="DataSets\BudgetFinancialsDBDataSetDebt.xss">
       <DependentUpon>BudgetFinancialsDBDataSetDebt.xsd</DependentUpon>
     </None>
-    <None Include="BudgetFinancialsDBDataSetSavingsName.xsc">
+    <None Include="DataSets\BudgetFinancialsDBDataSetSavingsName.xsc">
       <DependentUpon>BudgetFinancialsDBDataSetSavingsName.xsd</DependentUpon>
     </None>
-    <None Include="BudgetFinancialsDBDataSetSavingsName.xsd">
+    <None Include="DataSets\BudgetFinancialsDBDataSetSavingsName.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BudgetFinancialsDBDataSetSavingsName.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BudgetFinancialsDBDataSetSavingsName.xss">
+    <None Include="DataSets\BudgetFinancialsDBDataSetSavingsName.xss">
       <DependentUpon>BudgetFinancialsDBDataSetSavingsName.xsd</DependentUpon>
     </None>
     <None Include="BudgetFinancialsVTDIModel.edmx.diagram">

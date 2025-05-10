@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BudgetFinancialsVTDIApp
+namespace BudgetFinancialsVTDIApp.Data_Models
 {
     using System;
     using System.Data.Entity;
