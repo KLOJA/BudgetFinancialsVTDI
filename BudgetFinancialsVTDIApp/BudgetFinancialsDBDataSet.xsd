@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BudgetFinancialsDBDataSet" targetNamespace="http://tempuri.org/BudgetFinancialsDBDataSet.xsd" xmlns:mstns="http://tempuri.org/BudgetFinancialsDBDataSet.xsd" xmlns="http://tempuri.org/BudgetFinancialsDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BudgetFinancialsDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BudgetFinancialsDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BudgetFinancialsVTDIApp.Properties.Settings.GlobalReference.Default.BudgetFinancialsDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserDebtTbTableAdapter" GeneratorDataComponentClassName="UserDebtTbTableAdapter" Name="UserDebtTb" UserDataComponentName="UserDebtTbTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BudgetFinancialsDBConnectionString (Settings)" DbObjectName="BudgetFinancialsDB.dbo.UserDebtTb" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DebtName, DebtType, CurrentDebt FROM dbo.UserDebtTb</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DebtName" DataSetColumn="DebtName" />
+              <Mapping SourceColumn="DebtType" DataSetColumn="DebtType" />
+              <Mapping SourceColumn="CurrentDebt" DataSetColumn="CurrentDebt" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BudgetFinancialsDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BudgetFinancialsDBDataSet" msprop:Generator_DataSetName="BudgetFinancialsDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UserDebtTb" msprop:Generator_RowEvHandlerName="UserDebtTbRowChangeEventHandler" msprop:Generator_RowDeletedName="UserDebtTbRowDeleted" msprop:Generator_RowDeletingName="UserDebtTbRowDeleting" msprop:Generator_RowEvArgName="UserDebtTbRowChangeEvent" msprop:Generator_TablePropName="UserDebtTb" msprop:Generator_RowChangedName="UserDebtTbRowChanged" msprop:Generator_RowChangingName="UserDebtTbRowChanging" msprop:Generator_TableClassName="UserDebtTbDataTable" msprop:Generator_RowClassName="UserDebtTbRow" msprop:Generator_TableVarName="tableUserDebtTb" msprop:Generator_UserTableName="UserDebtTb">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DebtName" msprop:Generator_ColumnPropNameInRow="DebtName" msprop:Generator_ColumnPropNameInTable="DebtNameColumn" msprop:Generator_ColumnVarNameInTable="columnDebtName" msprop:Generator_UserColumnName="DebtName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DebtType" msprop:Generator_ColumnPropNameInRow="DebtType" msprop:Generator_ColumnPropNameInTable="DebtTypeColumn" msprop:Generator_ColumnVarNameInTable="columnDebtType" msprop:Generator_UserColumnName="DebtType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrentDebt" msprop:Generator_ColumnPropNameInRow="CurrentDebt" msprop:Generator_ColumnPropNameInTable="CurrentDebtColumn" msprop:Generator_ColumnVarNameInTable="columnCurrentDebt" msprop:Generator_UserColumnName="CurrentDebt" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

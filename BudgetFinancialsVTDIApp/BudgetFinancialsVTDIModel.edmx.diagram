@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="089cfd992018411ea08548254e8b55e3" Name="Diagram1">
+        <EntityTypeShape EntityType="BudgetFinancialsDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetFinancialsDBModel.UserDebtTb" Width="1.5" PointX="3.375" PointY="6.625" />
+        <EntityTypeShape EntityType="BudgetFinancialsDBModel.UserSavingsTb" Width="2.5" PointX="4.375" PointY="3.25" />
+        <EntityTypeShape EntityType="BudgetFinancialsDBModel.UsersTb" Width="1.5" PointX="1.875" PointY="3.375" />
+        <AssociationConnector Association="BudgetFinancialsDBModel.FK_UserDebt_Users1" />
+        <AssociationConnector Association="BudgetFinancialsDBModel.FK_UserSavings_Users1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

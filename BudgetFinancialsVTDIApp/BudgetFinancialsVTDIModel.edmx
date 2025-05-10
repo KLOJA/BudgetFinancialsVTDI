@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BudgetFinancialsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UserDebtTb">
+          <Key>
+            <PropertyRef Name="DebtID" />
+          </Key>
+          <Property Name="DebtID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="DebtName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DebtInterestRate" Type="int" />
+          <Property Name="DebtType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DateDebtUpdate" Type="datetime" />
+          <Property Name="MonthlyPayment" Type="int" />
+          <Property Name="CurrentDebt" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="UserSavingsTb">
+          <Key>
+            <PropertyRef Name="SavingsID" />
+          </Key>
+          <Property Name="SavingsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="StartingSavings" Type="int" Nullable="false" />
+          <Property Name="SavingsGoal" Type="int" Nullable="false" />
+          <Property Name="SavingsName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AddtoSavings" Type="int" />
+          <Property Name="SavingsInterestRate" Type="int" Nullable="false" />
+          <Property Name="DateSavingsUpdate" Type="datetime" />
+          <Property Name="CurrentSavings" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="UsersTb">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PasswordHash" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_UserDebt_Users">
+          <End Role="UsersTb" Type="Self.UsersTb" Multiplicity="1" />
+          <End Role="UserDebtTb" Type="Self.UserDebtTb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTb">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserDebtTb">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSavings_Users">
+          <End Role="UsersTb" Type="Self.UsersTb" Multiplicity="1" />
+          <End Role="UserSavingsTb" Type="Self.UserSavingsTb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTb">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserSavingsTb">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BudgetFinancialsDBModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDebtTb" EntityType="Self.UserDebtTb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserSavingsTb" EntityType="Self.UserSavingsTb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersTb" EntityType="Self.UsersTb" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_UserDebt_Users" Association="Self.FK_UserDebt_Users">
+            <End Role="UsersTb" EntitySet="UsersTb" />
+            <End Role="UserDebtTb" EntitySet="UserDebtTb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSavings_Users" Association="Self.FK_UserSavings_Users">
+            <End Role="UsersTb" EntitySet="UsersTb" />
+            <End Role="UserSavingsTb" EntitySet="UserSavingsTb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BudgetFinancialsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="BudgetFinancialsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UserDebtTbs" EntityType="BudgetFinancialsDBModel.UserDebtTb" />
+          <EntitySet Name="UserSavingsTbs" EntityType="BudgetFinancialsDBModel.UserSavingsTb" />
+          <EntitySet Name="UsersTbs" EntityType="BudgetFinancialsDBModel.UsersTb" />
+          <AssociationSet Name="FK_UserDebt_Users1" Association="BudgetFinancialsDBModel.FK_UserDebt_Users1">
+            <End Role="UsersTb" EntitySet="UsersTbs" />
+            <End Role="UserDebtTb" EntitySet="UserDebtTbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSavings_Users1" Association="BudgetFinancialsDBModel.FK_UserSavings_Users1">
+            <End Role="UsersTb" EntitySet="UsersTbs" />
+            <End Role="UserSavingsTb" EntitySet="UserSavingsTbs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="UserDebtTb">
+          <Key>
+            <PropertyRef Name="DebtID" />
+          </Key>
+          <Property Name="DebtID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="DebtName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DebtInterestRate" Type="Int32" />
+          <Property Name="DebtType" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateDebtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="MonthlyPayment" Type="Int32" />
+          <Property Name="CurrentDebt" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="UsersTb" Relationship="BudgetFinancialsDBModel.FK_UserDebt_Users1" FromRole="UserDebtTb" ToRole="UsersTb" />
+        </EntityType>
+        <EntityType Name="UserSavingsTb">
+          <Key>
+            <PropertyRef Name="SavingsID" />
+          </Key>
+          <Property Name="SavingsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StartingSavings" Type="Int32" Nullable="false" />
+          <Property Name="SavingsGoal" Type="Int32" Nullable="false" />
+          <Property Name="SavingsName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AddtoSavings" Type="Int32" />
+          <Property Name="SavingsInterestRate" Type="Int32" Nullable="false" />
+          <Property Name="DateSavingsUpdate" Type="DateTime" Precision="3" />
+          <Property Name="CurrentSavings" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="UsersTb" Relationship="BudgetFinancialsDBModel.FK_UserSavings_Users1" FromRole="UserSavingsTb" ToRole="UsersTb" />
+        </EntityType>
+        <EntityType Name="UsersTb">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordHash" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UserDebtTbs" Relationship="BudgetFinancialsDBModel.FK_UserDebt_Users1" FromRole="UsersTb" ToRole="UserDebtTb" />
+          <NavigationProperty Name="UserSavingsTbs" Relationship="BudgetFinancialsDBModel.FK_UserSavings_Users1" FromRole="UsersTb" ToRole="UserSavingsTb" />
+        </EntityType>
+        <Association Name="FK_UserDebt_Users1">
+          <End Type="BudgetFinancialsDBModel.UsersTb" Role="UsersTb" Multiplicity="1" />
+          <End Type="BudgetFinancialsDBModel.UserDebtTb" Role="UserDebtTb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTb">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserDebtTb">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSavings_Users1">
+          <End Type="BudgetFinancialsDBModel.UsersTb" Role="UsersTb" Multiplicity="1" />
+          <End Type="BudgetFinancialsDBModel.UserSavingsTb" Role="UserSavingsTb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTb">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserSavingsTb">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BudgetFinancialsDBModelStoreContainer" CdmEntityContainer="BudgetFinancialsDBEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BudgetFinancialsDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDebtTbs">
+            <EntityTypeMapping TypeName="BudgetFinancialsDBModel.UserDebtTb">
+              <MappingFragment StoreEntitySet="UserDebtTb">
+                <ScalarProperty Name="CurrentDebt" ColumnName="CurrentDebt" />
+                <ScalarProperty Name="MonthlyPayment" ColumnName="MonthlyPayment" />
+                <ScalarProperty Name="DateDebtUpdate" ColumnName="DateDebtUpdate" />
+                <ScalarProperty Name="DebtType" ColumnName="DebtType" />
+                <ScalarProperty Name="DebtInterestRate" ColumnName="DebtInterestRate" />
+                <ScalarProperty Name="DebtName" ColumnName="DebtName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="DebtID" ColumnName="DebtID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSavingsTbs">
+            <EntityTypeMapping TypeName="BudgetFinancialsDBModel.UserSavingsTb">
+              <MappingFragment StoreEntitySet="UserSavingsTb">
+                <ScalarProperty Name="CurrentSavings" ColumnName="CurrentSavings" />
+                <ScalarProperty Name="DateSavingsUpdate" ColumnName="DateSavingsUpdate" />
+                <ScalarProperty Name="SavingsInterestRate" ColumnName="SavingsInterestRate" />
+                <ScalarProperty Name="AddtoSavings" ColumnName="AddtoSavings" />
+                <ScalarProperty Name="SavingsName" ColumnName="SavingsName" />
+                <ScalarProperty Name="SavingsGoal" ColumnName="SavingsGoal" />
+                <ScalarProperty Name="StartingSavings" ColumnName="StartingSavings" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SavingsID" ColumnName="SavingsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersTbs">
+            <EntityTypeMapping TypeName="BudgetFinancialsDBModel.UsersTb">
+              <MappingFragment StoreEntitySet="UsersTb">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

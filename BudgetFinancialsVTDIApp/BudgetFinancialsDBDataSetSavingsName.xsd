@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BudgetFinancialsDBDataSetSavingsName" targetNamespace="http://tempuri.org/BudgetFinancialsDBDataSetSavingsName.xsd" xmlns:mstns="http://tempuri.org/BudgetFinancialsDBDataSetSavingsName.xsd" xmlns="http://tempuri.org/BudgetFinancialsDBDataSetSavingsName.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BudgetFinancialsDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BudgetFinancialsDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BudgetFinancialsVTDIApp.Properties.Settings.GlobalReference.Default.BudgetFinancialsDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserSavingsTbTableAdapter" GeneratorDataComponentClassName="UserSavingsTbTableAdapter" Name="UserSavingsTb" UserDataComponentName="UserSavingsTbTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BudgetFinancialsDBConnectionString (Settings)" DbObjectName="BudgetFinancialsDB.dbo.UserSavingsTb" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SavingsName FROM dbo.UserSavingsTb</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SavingsName" DataSetColumn="SavingsName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BudgetFinancialsDBDataSetSavingsName" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BudgetFinancialsDBDataSetSavingsName" msprop:Generator_DataSetName="BudgetFinancialsDBDataSetSavingsName">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UserSavingsTb" msprop:Generator_RowEvHandlerName="UserSavingsTbRowChangeEventHandler" msprop:Generator_RowDeletedName="UserSavingsTbRowDeleted" msprop:Generator_RowDeletingName="UserSavingsTbRowDeleting" msprop:Generator_RowEvArgName="UserSavingsTbRowChangeEvent" msprop:Generator_TablePropName="UserSavingsTb" msprop:Generator_RowChangedName="UserSavingsTbRowChanged" msprop:Generator_RowChangingName="UserSavingsTbRowChanging" msprop:Generator_TableClassName="UserSavingsTbDataTable" msprop:Generator_RowClassName="UserSavingsTbRow" msprop:Generator_TableVarName="tableUserSavingsTb" msprop:Generator_UserTableName="UserSavingsTb">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SavingsName" msprop:Generator_ColumnPropNameInRow="SavingsName" msprop:Generator_ColumnPropNameInTable="SavingsNameColumn" msprop:Generator_ColumnVarNameInTable="columnSavingsName" msprop:Generator_UserColumnName="SavingsName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
