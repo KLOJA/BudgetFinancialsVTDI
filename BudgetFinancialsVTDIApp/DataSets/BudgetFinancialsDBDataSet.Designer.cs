@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace BudgetFinancialsVTDIApp {
+namespace BudgetFinancialsVTDIApp.DataSets {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace BudgetFinancialsVTDIApp {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BudgetFinancialsDBDataSetSavingsName")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BudgetFinancialsDBDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BudgetFinancialsDBDataSetSavingsName : global::System.Data.DataSet {
+    public partial class BudgetFinancialsDBDataSet : global::System.Data.DataSet {
         
-        private UserSavingsTbDataTable tableUserSavingsTb;
+        private UserDebtTbDataTable tableUserDebtTb;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BudgetFinancialsDBDataSetSavingsName() {
+        public BudgetFinancialsDBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BudgetFinancialsVTDIApp {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected BudgetFinancialsDBDataSetSavingsName(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BudgetFinancialsDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace BudgetFinancialsVTDIApp {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["UserSavingsTb"] != null)) {
-                    base.Tables.Add(new UserSavingsTbDataTable(ds.Tables["UserSavingsTb"]));
+                if ((ds.Tables["UserDebtTb"] != null)) {
+                    base.Tables.Add(new UserDebtTbDataTable(ds.Tables["UserDebtTb"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace BudgetFinancialsVTDIApp {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public UserSavingsTbDataTable UserSavingsTb {
+        public UserDebtTbDataTable UserDebtTb {
             get {
-                return this.tableUserSavingsTb;
+                return this.tableUserDebtTb;
             }
         }
         
@@ -127,7 +127,7 @@ namespace BudgetFinancialsVTDIApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BudgetFinancialsDBDataSetSavingsName cln = ((BudgetFinancialsDBDataSetSavingsName)(base.Clone()));
+            BudgetFinancialsDBDataSet cln = ((BudgetFinancialsDBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace BudgetFinancialsVTDIApp {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["UserSavingsTb"] != null)) {
-                    base.Tables.Add(new UserSavingsTbDataTable(ds.Tables["UserSavingsTb"]));
+                if ((ds.Tables["UserDebtTb"] != null)) {
+                    base.Tables.Add(new UserDebtTbDataTable(ds.Tables["UserDebtTb"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace BudgetFinancialsVTDIApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableUserSavingsTb = ((UserSavingsTbDataTable)(base.Tables["UserSavingsTb"]));
+            this.tableUserDebtTb = ((UserDebtTbDataTable)(base.Tables["UserDebtTb"]));
             if ((initTable == true)) {
-                if ((this.tableUserSavingsTb != null)) {
-                    this.tableUserSavingsTb.InitVars();
+                if ((this.tableUserDebtTb != null)) {
+                    this.tableUserDebtTb.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace BudgetFinancialsVTDIApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BudgetFinancialsDBDataSetSavingsName";
+            this.DataSetName = "BudgetFinancialsDBDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BudgetFinancialsDBDataSetSavingsName.xsd";
+            this.Namespace = "http://tempuri.org/BudgetFinancialsDBDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableUserSavingsTb = new UserSavingsTbDataTable();
-            base.Tables.Add(this.tableUserSavingsTb);
+            this.tableUserDebtTb = new UserDebtTbDataTable();
+            base.Tables.Add(this.tableUserDebtTb);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeUserSavingsTb() {
+        private bool ShouldSerializeUserDebtTb() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace BudgetFinancialsVTDIApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BudgetFinancialsDBDataSetSavingsName ds = new BudgetFinancialsDBDataSetSavingsName();
+            BudgetFinancialsDBDataSet ds = new BudgetFinancialsDBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,21 +270,25 @@ namespace BudgetFinancialsVTDIApp {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void UserSavingsTbRowChangeEventHandler(object sender, UserSavingsTbRowChangeEvent e);
+        public delegate void UserDebtTbRowChangeEventHandler(object sender, UserDebtTbRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class UserSavingsTbDataTable : global::System.Data.TypedTableBase<UserSavingsTbRow> {
+        public partial class UserDebtTbDataTable : global::System.Data.TypedTableBase<UserDebtTbRow> {
             
-            private global::System.Data.DataColumn columnSavingsName;
+            private global::System.Data.DataColumn columnDebtName;
+            
+            private global::System.Data.DataColumn columnDebtType;
+            
+            private global::System.Data.DataColumn columnCurrentDebt;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserSavingsTbDataTable() {
-                this.TableName = "UserSavingsTb";
+            public UserDebtTbDataTable() {
+                this.TableName = "UserDebtTb";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -292,7 +296,7 @@ namespace BudgetFinancialsVTDIApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal UserSavingsTbDataTable(global::System.Data.DataTable table) {
+            internal UserDebtTbDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -309,16 +313,32 @@ namespace BudgetFinancialsVTDIApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected UserSavingsTbDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected UserDebtTbDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SavingsNameColumn {
+            public global::System.Data.DataColumn DebtNameColumn {
                 get {
-                    return this.columnSavingsName;
+                    return this.columnDebtName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DebtTypeColumn {
+                get {
+                    return this.columnDebtType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CurrentDebtColumn {
+                get {
+                    return this.columnCurrentDebt;
                 }
             }
             
@@ -333,45 +353,47 @@ namespace BudgetFinancialsVTDIApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserSavingsTbRow this[int index] {
+            public UserDebtTbRow this[int index] {
                 get {
-                    return ((UserSavingsTbRow)(this.Rows[index]));
+                    return ((UserDebtTbRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event UserSavingsTbRowChangeEventHandler UserSavingsTbRowChanging;
+            public event UserDebtTbRowChangeEventHandler UserDebtTbRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event UserSavingsTbRowChangeEventHandler UserSavingsTbRowChanged;
+            public event UserDebtTbRowChangeEventHandler UserDebtTbRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event UserSavingsTbRowChangeEventHandler UserSavingsTbRowDeleting;
+            public event UserDebtTbRowChangeEventHandler UserDebtTbRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event UserSavingsTbRowChangeEventHandler UserSavingsTbRowDeleted;
+            public event UserDebtTbRowChangeEventHandler UserDebtTbRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddUserSavingsTbRow(UserSavingsTbRow row) {
+            public void AddUserDebtTbRow(UserDebtTbRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserSavingsTbRow AddUserSavingsTbRow(string SavingsName) {
-                UserSavingsTbRow rowUserSavingsTbRow = ((UserSavingsTbRow)(this.NewRow()));
+            public UserDebtTbRow AddUserDebtTbRow(string DebtName, string DebtType, decimal CurrentDebt) {
+                UserDebtTbRow rowUserDebtTbRow = ((UserDebtTbRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        SavingsName};
-                rowUserSavingsTbRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowUserSavingsTbRow);
-                return rowUserSavingsTbRow;
+                        DebtName,
+                        DebtType,
+                        CurrentDebt};
+                rowUserDebtTbRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowUserDebtTbRow);
+                return rowUserDebtTbRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                UserSavingsTbDataTable cln = ((UserSavingsTbDataTable)(base.Clone()));
+                UserDebtTbDataTable cln = ((UserDebtTbDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -379,48 +401,56 @@ namespace BudgetFinancialsVTDIApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new UserSavingsTbDataTable();
+                return new UserDebtTbDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnSavingsName = base.Columns["SavingsName"];
+                this.columnDebtName = base.Columns["DebtName"];
+                this.columnDebtType = base.Columns["DebtType"];
+                this.columnCurrentDebt = base.Columns["CurrentDebt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnSavingsName = new global::System.Data.DataColumn("SavingsName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSavingsName);
-                this.columnSavingsName.AllowDBNull = false;
-                this.columnSavingsName.MaxLength = 255;
+                this.columnDebtName = new global::System.Data.DataColumn("DebtName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDebtName);
+                this.columnDebtType = new global::System.Data.DataColumn("DebtType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDebtType);
+                this.columnCurrentDebt = new global::System.Data.DataColumn("CurrentDebt", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCurrentDebt);
+                this.columnDebtName.AllowDBNull = false;
+                this.columnDebtName.MaxLength = 255;
+                this.columnDebtType.AllowDBNull = false;
+                this.columnDebtType.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserSavingsTbRow NewUserSavingsTbRow() {
-                return ((UserSavingsTbRow)(this.NewRow()));
+            public UserDebtTbRow NewUserDebtTbRow() {
+                return ((UserDebtTbRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new UserSavingsTbRow(builder);
+                return new UserDebtTbRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(UserSavingsTbRow);
+                return typeof(UserDebtTbRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.UserSavingsTbRowChanged != null)) {
-                    this.UserSavingsTbRowChanged(this, new UserSavingsTbRowChangeEvent(((UserSavingsTbRow)(e.Row)), e.Action));
+                if ((this.UserDebtTbRowChanged != null)) {
+                    this.UserDebtTbRowChanged(this, new UserDebtTbRowChangeEvent(((UserDebtTbRow)(e.Row)), e.Action));
                 }
             }
             
@@ -428,8 +458,8 @@ namespace BudgetFinancialsVTDIApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.UserSavingsTbRowChanging != null)) {
-                    this.UserSavingsTbRowChanging(this, new UserSavingsTbRowChangeEvent(((UserSavingsTbRow)(e.Row)), e.Action));
+                if ((this.UserDebtTbRowChanging != null)) {
+                    this.UserDebtTbRowChanging(this, new UserDebtTbRowChangeEvent(((UserDebtTbRow)(e.Row)), e.Action));
                 }
             }
             
@@ -437,8 +467,8 @@ namespace BudgetFinancialsVTDIApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.UserSavingsTbRowDeleted != null)) {
-                    this.UserSavingsTbRowDeleted(this, new UserSavingsTbRowChangeEvent(((UserSavingsTbRow)(e.Row)), e.Action));
+                if ((this.UserDebtTbRowDeleted != null)) {
+                    this.UserDebtTbRowDeleted(this, new UserDebtTbRowChangeEvent(((UserDebtTbRow)(e.Row)), e.Action));
                 }
             }
             
@@ -446,14 +476,14 @@ namespace BudgetFinancialsVTDIApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.UserSavingsTbRowDeleting != null)) {
-                    this.UserSavingsTbRowDeleting(this, new UserSavingsTbRowChangeEvent(((UserSavingsTbRow)(e.Row)), e.Action));
+                if ((this.UserDebtTbRowDeleting != null)) {
+                    this.UserDebtTbRowDeleting(this, new UserDebtTbRowChangeEvent(((UserDebtTbRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveUserSavingsTbRow(UserSavingsTbRow row) {
+            public void RemoveUserDebtTbRow(UserDebtTbRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -462,7 +492,7 @@ namespace BudgetFinancialsVTDIApp {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BudgetFinancialsDBDataSetSavingsName ds = new BudgetFinancialsDBDataSetSavingsName();
+                BudgetFinancialsDBDataSet ds = new BudgetFinancialsDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -480,7 +510,7 @@ namespace BudgetFinancialsVTDIApp {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "UserSavingsTbDataTable";
+                attribute2.FixedValue = "UserDebtTbDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -524,26 +554,65 @@ namespace BudgetFinancialsVTDIApp {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class UserSavingsTbRow : global::System.Data.DataRow {
+        public partial class UserDebtTbRow : global::System.Data.DataRow {
             
-            private UserSavingsTbDataTable tableUserSavingsTb;
+            private UserDebtTbDataTable tableUserDebtTb;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal UserSavingsTbRow(global::System.Data.DataRowBuilder rb) : 
+            internal UserDebtTbRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableUserSavingsTb = ((UserSavingsTbDataTable)(this.Table));
+                this.tableUserDebtTb = ((UserDebtTbDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string SavingsName {
+            public string DebtName {
                 get {
-                    return ((string)(this[this.tableUserSavingsTb.SavingsNameColumn]));
+                    return ((string)(this[this.tableUserDebtTb.DebtNameColumn]));
                 }
                 set {
-                    this[this.tableUserSavingsTb.SavingsNameColumn] = value;
+                    this[this.tableUserDebtTb.DebtNameColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DebtType {
+                get {
+                    return ((string)(this[this.tableUserDebtTb.DebtTypeColumn]));
+                }
+                set {
+                    this[this.tableUserDebtTb.DebtTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal CurrentDebt {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableUserDebtTb.CurrentDebtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CurrentDebt\' in table \'UserDebtTb\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUserDebtTb.CurrentDebtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCurrentDebtNull() {
+                return this.IsNull(this.tableUserDebtTb.CurrentDebtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCurrentDebtNull() {
+                this[this.tableUserDebtTb.CurrentDebtColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -551,22 +620,22 @@ namespace BudgetFinancialsVTDIApp {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class UserSavingsTbRowChangeEvent : global::System.EventArgs {
+        public class UserDebtTbRowChangeEvent : global::System.EventArgs {
             
-            private UserSavingsTbRow eventRow;
+            private UserDebtTbRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserSavingsTbRowChangeEvent(UserSavingsTbRow row, global::System.Data.DataRowAction action) {
+            public UserDebtTbRowChangeEvent(UserDebtTbRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserSavingsTbRow Row {
+            public UserDebtTbRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -582,7 +651,7 @@ namespace BudgetFinancialsVTDIApp {
         }
     }
 }
-namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapters {
+namespace BudgetFinancialsVTDIApp.DataSets.BudgetFinancialsDBDataSetTableAdapters {
     
     
     /// <summary>
@@ -594,7 +663,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class UserSavingsTbTableAdapter : global::System.ComponentModel.Component {
+    public partial class UserDebtTbTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -608,7 +677,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public UserSavingsTbTableAdapter() {
+        public UserDebtTbTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -705,8 +774,10 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "UserSavingsTb";
-            tableMapping.ColumnMappings.Add("SavingsName", "SavingsName");
+            tableMapping.DataSetTable = "UserDebtTb";
+            tableMapping.ColumnMappings.Add("DebtName", "DebtName");
+            tableMapping.ColumnMappings.Add("DebtType", "DebtType");
+            tableMapping.ColumnMappings.Add("CurrentDebt", "CurrentDebt");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -723,7 +794,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT SavingsName FROM dbo.UserSavingsTb";
+            this._commandCollection[0].CommandText = "SELECT DebtName, DebtType, CurrentDebt FROM dbo.UserDebtTb";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -731,7 +802,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BudgetFinancialsDBDataSetSavingsName.UserSavingsTbDataTable dataTable) {
+        public virtual int Fill(BudgetFinancialsDBDataSet.UserDebtTbDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -744,9 +815,9 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BudgetFinancialsDBDataSetSavingsName.UserSavingsTbDataTable GetData() {
+        public virtual BudgetFinancialsDBDataSet.UserDebtTbDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BudgetFinancialsDBDataSetSavingsName.UserSavingsTbDataTable dataTable = new BudgetFinancialsDBDataSetSavingsName.UserSavingsTbDataTable();
+            BudgetFinancialsDBDataSet.UserDebtTbDataTable dataTable = new BudgetFinancialsDBDataSet.UserDebtTbDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -820,7 +891,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(BudgetFinancialsDBDataSetSavingsName dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BudgetFinancialsDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -830,7 +901,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(BudgetFinancialsDBDataSetSavingsName dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BudgetFinancialsDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -840,7 +911,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(BudgetFinancialsDBDataSetSavingsName dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BudgetFinancialsDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -874,7 +945,7 @@ namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetSavingsNameTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(BudgetFinancialsDBDataSetSavingsName dataSet) {
+        public virtual int UpdateAll(BudgetFinancialsDBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

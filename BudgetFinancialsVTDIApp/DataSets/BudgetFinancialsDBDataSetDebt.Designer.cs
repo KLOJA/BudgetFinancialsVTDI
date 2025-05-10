@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace BudgetFinancialsVTDIApp {
+namespace BudgetFinancialsVTDIApp.DataSets {
     
     
     /// <summary>
@@ -676,7 +676,7 @@ namespace BudgetFinancialsVTDIApp {
         }
     }
 }
-namespace BudgetFinancialsVTDIApp.BudgetFinancialsDBDataSetDebtTableAdapters {
+namespace BudgetFinancialsVTDIApp.DataSets.BudgetFinancialsDBDataSetDebtTableAdapters {
     
     
     /// <summary>
